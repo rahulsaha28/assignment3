@@ -1,5 +1,5 @@
 
-
+//  https://github.com/rahulsaha28/assignment3
 
 /**
  *      problem one
@@ -228,6 +228,6 @@ function kilometerToMeter(kilometerDistance){
 
  
  
- console.log(megaFriend(["suzonna", "dhiraj ", " par"]));
+ 
  
 
