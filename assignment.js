@@ -165,8 +165,9 @@ function kilometerToMeter(kilometerDistance){
  *      find name (of maximum letter) in a given array
  *      
  *      1. error: if input is not array or array is empty
- *      2. input value: valid array 
- *      3. find max name from array
+ *      2. must be careful about space in a name 
+ *      3. input value: valid array 
+ *      4. find max name from array
  * 
  */
 
@@ -191,16 +192,24 @@ function kilometerToMeter(kilometerDistance){
         let maxlength = -1;
         for(let i = 0; i<friendNameArr.length; i++)
         {
-            if(friendNameArr[i].length> maxlength)
+            // this for loop is use to counting  number of space in a name
+            let spaceCount = 0;
+            for(let j=0; j<friendNameArr[i].length; j++)
+            {
+                if(friendNameArr[i][j]==" ")
+                {
+                    spaceCount++;
+                }
+            }
+            
+
+            if((friendNameArr[i].length-spaceCount)> maxlength)
             {
                 // set maxlength a new high value
-                maxlength = friendNameArr[i].length;
+                maxlength = friendNameArr[i].length-spaceCount;
                 maxName = friendNameArr[i];
             }
-            else if(friendNameArr[i].length == maxlength )
-            {
-                errMess = "Error: find more name as same number of character .";
-            }
+            
         }
 
     }
@@ -216,5 +225,9 @@ function kilometerToMeter(kilometerDistance){
 
  }
 
+
+ 
+ 
+ console.log(megaFriend(["suzonna", "dhiraj ", " par"]));
  
 
